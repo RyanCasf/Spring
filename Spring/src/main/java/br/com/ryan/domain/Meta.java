@@ -8,10 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="meta")
+@Entity @Table(name="meta")
 public class Meta implements Serializable
 {
+	private static final long serialVersionUID = -5775418406381487039L;
+
 	@Id @GeneratedValue
 	private Long chave;
 	
