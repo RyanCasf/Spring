@@ -13,22 +13,18 @@ public class MetaDAO implements MetaInterface
 	private EntityManager em;
 	
 	@Override
-	public void salvar(Meta meta) 
-	{
+	public void salvar(Meta meta) {
 		em.persist(meta);
 	}
 
 	@Override
-	public Meta obter(Long chave) 
-	{
+	public Meta obter(Long chave) {
 		return em.find(Meta.class, chave);
 	}
 
 	@Override
-	public List<Meta> pesquisar(Long chave, String titulo, String descricao, boolean excluido) 
-	{
+	public List<Meta> pesquisar(Long chave, String titulo, String descricao, boolean excluido) {
 		String sql = "SELECT m FROM meta ";
-		
 		return em.createQuery(sql, Meta.class).getResultList();
 	}
 }

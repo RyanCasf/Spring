@@ -2,7 +2,6 @@ package br.com.ryan.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,8 +10,6 @@ import javax.persistence.Table;
 @Entity @Table(name="meta")
 public class Meta implements Serializable
 {
-	private static final long serialVersionUID = -5775418406381487039L;
-
 	@Id @GeneratedValue
 	private Long chave;
 	
@@ -68,5 +65,11 @@ public class Meta implements Serializable
 			return false;
 		Meta other = (Meta) obj;
 		return Objects.equals(chave, other.chave);
+	}
+
+	@Override
+	public String toString() {
+		return "Meta [chave=" + chave + ", titulo=" + titulo + ", descricao=" + descricao + ", excluido=" + excluido
+				+ "]";
 	}
 }

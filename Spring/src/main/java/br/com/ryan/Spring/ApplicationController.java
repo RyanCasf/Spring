@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ApplicationController 
 {
 	@GetMapping @ResponseBody
-	public String hello()
-	{
+	public String hello() {
 		return getHeader();
 	}
 	
