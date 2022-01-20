@@ -21,14 +21,19 @@ public class SchemaController
 	@Autowired
 	private SchemaRepository sDAO;
 	
-	@GetMapping
+	@GetMapping("/pesquisar")
 	public List<Schema> listar() {
 		return sDAO.findAll();
 	}
 	
-	@PostMapping
+	@PostMapping("/salvar")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Schema salvar(@RequestBody Schema schema) {
 		return sDAO.save(schema);
+	}
+	
+	@GetMapping(path = "/status")
+	public String status() {
+		return "Online";
 	}
 }
