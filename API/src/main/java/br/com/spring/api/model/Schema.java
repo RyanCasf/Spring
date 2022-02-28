@@ -1,9 +1,6 @@
 package br.com.spring.api.model;
 
-import java.util.Date;
 import java.util.Objects;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,45 +13,31 @@ public class Schema
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long chave;
 	
-	@Column(nullable = true)
-	private Date dataHora;
-	
-	@Column(nullable = true)
-	private String usuario;
-	
-	@Column(length = 512, nullable = true)
-	private String descricao;
-	
+	private String imagem;
+	private String nome;
+
 	public Long getChave() {
 		return chave;
 	}
-	
+
 	public void setChave(Long chave) {
 		this.chave = chave;
 	}
-	
-	public Date getDataHora() {
-		return dataHora;
+
+	public String getImagem() {
+		return imagem;
 	}
-	
-	public void setDataHora(Date dataHora) {
-		this.dataHora = dataHora;
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
-	
-	public String getUsuario() {
-		return usuario;
+
+	public String getNome() {
+		return nome;
 	}
-	
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override
