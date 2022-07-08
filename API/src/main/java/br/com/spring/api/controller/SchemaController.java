@@ -34,7 +34,7 @@ public class SchemaController
 		return sDAO.save(schema);
 	}
 	
-	@GetMapping(path = "/status")
+	@GetMapping("/status")
 	public String status() {
 		return "Online";
 	}
